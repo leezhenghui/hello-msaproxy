@@ -1,0 +1,5 @@
+host_vars: [
+  { host_ip: "10.10.10.100", host_name: "hello-msaproxy"}
+]
+
+deps_home: /vagrant/deps

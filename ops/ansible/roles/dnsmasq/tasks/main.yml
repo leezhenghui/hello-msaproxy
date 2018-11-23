@@ -1,0 +1,60 @@
+- name: Installing dnsmasq 
+  become: yes
+  apt:
+    name: ['dnsmasq'] 
+    update_cache: yes
+    force: yes
+  register: dnsmasq_installed 
+  tags: [dnsmasq]
+
+- name : Copy dnsmasq configuration file
+  become: yes
+  copy:
+    src: "{{ dnsmasq_conf }}"
+    dest: "/etc/{{ dnsmasq_conf }}"
+    owner: root
+    group: root
+    mode: 0644
+  tags: [dnsmasq]
+
+- name: create dnsmasq.d directory
+  become: yes
+  file: >
+    state=directory
+    path={{ item }}
+  with_items:
+    - "/etc/dnsmasq.d"
+  tags: [dnsmasq]
+
+- name : Copy dnsmasq consul configuration file
+  become: yes
+  copy:
+    src: "{{ dnsmasq_consul_conf }}"
+    dest: "/etc/dnsmasq.d/10-consul"
+    owner: root
+    group: root
+    mode: 0644
+  tags: [dnsmasq]
+
+- name : Starting dnsmasq service
+  become: yes 
+  service:
+    name: dnsmasq 
+    state: restarted
+  tags: [dnsmasq]
+
+- name: Check if dnsmasq is running
+  shell: ps aux | grep "dnsmasq" | grep -v grep
+  ignore_errors: yes
+  changed_when: false
+  register: service_dnsmasq_status
+  tags: [dnsmasq]
+
+- name: Report status of dnsmasq 
+  fail:
+    msg: |
+      dnsmasq is not running.
+      Return code from `grep`:
+      {{ service_nomad_status.rc }}
+  when: service_dnsmasq_status.rc != 0
+  tags: [dnsmasq]

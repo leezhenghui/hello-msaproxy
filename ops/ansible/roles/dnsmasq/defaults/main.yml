@@ -1,0 +1,4 @@
+dnsmasq_conf: "dnsmasq.conf" 
+dnsmasq_consul_conf: "dnsmasq.consul" 
+
+dnsmasq_bin_path: "/usr/sbin/dnsmasq"
