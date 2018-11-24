@@ -1,8 +1,10 @@
 ## Introduction
 
-The purpose of this repository aims to provide a hands-on architecture PoC(proof-of-concept) sample that demonstrate how to **build** and **run** a `microservices architecture`(MSA) application(mimultiple programming languages) with the capabilities of service registry, naming resolution, client service disovery, client load balance, traffic shapping, failure tolerance, via resuable API-Gateway pattern. 
+The purpose of this repository aims to provide a hands-on architecture PoC(proof-of-concept) sample that demonstrate how to **build** and **run** a `microservices architecture`(MSA) application(multiple programming languages) with the capabilities of service registry, naming resolution, client service disovery, client load balance, traffic shapping, failure tolerance, etc. 
 
 ## PoC Scenario 
+
+The sample contains Java and Node.js modules. In reality, the RPC framework usually are programming language specific, so the challenge for us is how to enable a MSA application with mixed-languages. This sample will show you the approach of proxy pattern.
 
 ### Overview
 
@@ -73,6 +75,6 @@ The purpose of this repository aims to provide a hands-on architecture PoC(proof
 	./benchmark.sh
   ```
 
-- Result of Service Discovery and Load Balance
+#### Result of Service Discovery and Load Balance
 
 ![loadbalance-result](./docs/loadbalance-result.png)
