@@ -17,21 +17,22 @@ The sample contains Java and Node.js modules. In reality, the RPC framework usua
 - Git clone the project
 
 	On host:
-  ```
+  ```shell
   git clone git@github.com:leezhenghui/hello-msaproxy.git
   ```
 
 - Gradle build/deploy distribution
   
 	On host:
-	```
+	```shell
+	cd hello-msaproxy
   gradle deploy 
   ```
 
 - Launch VM 
   
 	On host:
-	```
+	```shell
 	cd ops
 	vagrant up
   ```
@@ -39,7 +40,7 @@ The sample contains Java and Node.js modules. In reality, the RPC framework usua
 - Provision the VM 
   
 	On host:
-	```
+	```shell
 	vagrant provision 
   ```
 
@@ -49,12 +50,12 @@ The sample contains Java and Node.js modules. In reality, the RPC framework usua
   
 	On host:
 
-	```
+	```shell
   vagrant ssh
   ```
 
 	In VM
-	```
+	```shell
 	cd /vagrant/bin
 	./start_all_jobs.sh
 	```
@@ -62,16 +63,14 @@ The sample contains Java and Node.js modules. In reality, the RPC framework usua
 - Run the sample 
 
   In VM:
-
-	```
+	```shell
 	./click.sh
   ```
 
 - Run benchmark 
 
   In VM:
-
-	```
+	```shell
 	./benchmark.sh
   ```
 
