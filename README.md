@@ -12,6 +12,8 @@ The sample contains Java and Node.js modules. In reality, the RPC framework usua
 
 ### Run the Sample 
 
+For each service, we will schedule two instances and check the service discovery and load balance result.
+
 #### Steps
 
 - Git clone the project
