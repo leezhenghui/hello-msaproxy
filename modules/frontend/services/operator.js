@@ -48,7 +48,7 @@ class Stub {
 
     try {
 			path = path || '/';
-			if ('/' !== path.indexOf(0)) {
+			if ('/' !== path.charAt(0)) {
 		    path = '/' + path;	
 			}
       const url = `http://${self.addr}${path}`;
