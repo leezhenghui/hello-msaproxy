@@ -16,6 +16,11 @@ For each service, we will schedule two instances with dynamic ports, and make th
 
 #### Steps
 
+- Prerequisites 
+  - Java
+  - Node.js
+  - Gradle
+
 - Git clone the project
 
 	On host:
@@ -25,9 +30,11 @@ For each service, we will schedule two instances with dynamic ports, and make th
 
 - Gradle build/deploy distribution
   
-	On host:
-	```shell
-	cd hello-msaproxy
+  On host:
+  ```shell
+  cd hello-msaproxy/modules/frontend
+  npm install
+  cd ../../
   gradle deploy 
   ```
 
